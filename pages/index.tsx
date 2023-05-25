@@ -15,7 +15,7 @@ import { useMemo, useState } from "react";
 import styles from "../styles/Theme.module.css";
 import { parseIneligibility } from "../utils/parseIneligibility";
 import { myEditionDropContractAddress, tokenId } from "../const/yourDetails";
-
+import imagLlogo from "klogo.png";
 const Home: NextPage = () => {
   const address = useAddress();
   const [quantity, setQuantity] = useState(1);
@@ -215,7 +215,13 @@ const Home: NextPage = () => {
           <>
             <div className={styles.infoSide}>
               {/* Title of your NFT Collection */}
+              <img
+                src="klogo.png"
+                alt="logo"
+                style={{ height: "100px", width: "100px", borderRadius: "50%" }}
+              />
               <h1>{contractMetadata?.name}</h1>
+
               {/* Description of your NFT Collection */}
               <p className={styles.description}>
                 {contractMetadata?.description}
