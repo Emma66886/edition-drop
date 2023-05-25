@@ -1,15 +1,18 @@
 import type { AppProps } from "next/app";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
-import { baseGoerli } from "wagmi/chains";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import Head from "next/head";
-
+import {BaseGoerli} from '@thirdweb-dev/chains'
+const sdk = new ThirdwebSDK(
+  BaseGoerli,
+);
 // This is the chain your dApp will work on.
-const activeChain = "base";
+const activeChain = "mumbai";
 // const {} = Chain
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={baseGoerli as any}>
+    <ThirdwebProvider sdkOptions={sdk} >
       <Head>
         <title>KINEMPUB| KINEMPUB X BASE JOURNEY NFT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
