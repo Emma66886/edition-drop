@@ -12,7 +12,7 @@ const activeChain = "mumbai";
 // const {} = Chain
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider sdkOptions={sdk} >
+    <ThirdwebProvider supportedChains={[BaseGoerli]}  activeChain={84531} >
       <Head>
         <title>KINEMPUB| KINEMPUB X BASE JOURNEY NFT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
